@@ -5,8 +5,8 @@
 declare module ionic
 {
     interface IonicPopoverService {
-        fromTemplate(template:string, options: Object):ng.IPromise;
-        fromTemplateUrl(url: string, options: Object):ng.IPromise;
+        fromTemplate(template:string, options: Object):ng.IPromise<IonicPopoverController>;
+        fromTemplateUrl(url: string, options: Object):ng.IPromise<IonicPopoverController>;
     }
 
     interface IonicPopoverControllerInitializeOptions {
@@ -19,9 +19,9 @@ declare module ionic
     interface IonicPopoverController
     {
         initialize(options: IonicPopoverControllerInitializeOptions);
-        show($event:Object): ng.IPromise;
-        hide(): ng.IPromise;
-        remove(): ng.IPromise;
+        show($event:Object): ng.IPromise<any>;
+        hide(): ng.IPromise<any>;
+        remove(): ng.IPromise<any>;
         isShown(): boolean;
     }
 }
